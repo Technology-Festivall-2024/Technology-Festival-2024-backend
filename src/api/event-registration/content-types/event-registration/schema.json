@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "event_registrations",
+  "info": {
+    "singularName": "event-registration",
+    "pluralName": "event-registrations",
+    "displayName": "Event Registration",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uid": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "confirmed": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Registration Pending",
+        "Registration Cancelled",
+        "Payment Pending",
+        "Payment Confirmed",
+        "Finalized"
+      ],
+      "required": true,
+      "default": "Registration Pending"
+    },
+    "participants": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::participant.participant",
+      "mappedBy": "eventRegistrations"
+    },
+    "event": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::event.event",
+      "inversedBy": "eventRegistrations"
+    },
+    "submission": {
+      "type": "component",
+      "repeatable": false,
+      "component": "event.submission"
+    },
+    "payment": {
+      "type": "component",
+      "repeatable": false,
+      "component": "event.payment"
+    }
+  }
+}

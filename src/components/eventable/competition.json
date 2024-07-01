@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_eventable_competitions",
+  "info": {
+    "displayName": "Competition",
+    "icon": "chartBubble"
+  },
+  "options": {},
+  "attributes": {
+    "maxParticipants": {
+      "type": "integer",
+      "required": true
+    },
+    "submission": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

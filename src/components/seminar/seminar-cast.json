@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_seminar_seminar_casts",
+  "info": {
+    "displayName": "Seminar Cast",
+    "icon": "chartBubble"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "photo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "role": {
+      "type": "enumeration",
+      "enum": [
+        "Moderator",
+        "Speaker"
+      ],
+      "required": true
+    }
+  }
+}

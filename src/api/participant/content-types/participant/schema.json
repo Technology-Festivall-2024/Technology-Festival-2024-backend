@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "participants",
+  "info": {
+    "singularName": "participant",
+    "pluralName": "participants",
+    "displayName": "Participant",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uid": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email"
+    },
+    "password": {
+      "type": "password",
+      "private": true
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "festival": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::festival.festival",
+      "inversedBy": "participants"
+    },
+    "provider": {
+      "type": "enumeration",
+      "enum": [
+        "Credentials",
+        "Google",
+        "GitHub"
+      ]
+    },
+    "eventRegistrations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::event-registration.event-registration",
+      "inversedBy": "participants"
+    }
+  }
+}

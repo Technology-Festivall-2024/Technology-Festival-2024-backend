@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_event_milestones",
+  "info": {
+    "displayName": "Milestone",
+    "icon": "chartBubble"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

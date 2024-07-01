@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_event_payments",
+  "info": {
+    "displayName": "Payment",
+    "icon": "chartBubble"
+  },
+  "options": {},
+  "attributes": {
+    "proof": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "uploadedAt": {
+      "type": "datetime",
+      "required": true
+    }
+  }
+}

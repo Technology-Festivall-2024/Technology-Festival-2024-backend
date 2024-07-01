@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "faqs",
+  "info": {
+    "singularName": "faq",
+    "pluralName": "faqs",
+    "displayName": "Faq",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "question": {
+      "type": "text",
+      "required": true
+    },
+    "answer": {
+      "type": "text",
+      "required": true
+    },
+    "festival": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::festival.festival",
+      "inversedBy": "faqs"
+    }
+  }
+}

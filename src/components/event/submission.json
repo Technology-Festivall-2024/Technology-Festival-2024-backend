@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_event_submissions",
+  "info": {
+    "displayName": "Submission",
+    "icon": "chartBubble",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "submission": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "uploadedAt": {
+      "type": "datetime",
+      "required": true
+    }
+  }
+}

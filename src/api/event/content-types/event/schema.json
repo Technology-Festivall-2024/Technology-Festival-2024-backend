@@ -1,0 +1,88 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "Event",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "codename": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "isOpened": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "price": {
+      "type": "biginteger",
+      "required": true
+    },
+    "heldIn": {
+      "type": "string",
+      "required": false
+    },
+    "heldOn": {
+      "type": "datetime"
+    },
+    "groupLink": {
+      "type": "string"
+    },
+    "festival": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::festival.festival",
+      "inversedBy": "events"
+    },
+    "eventable": {
+      "type": "dynamiczone",
+      "components": [
+        "eventable.competition",
+        "eventable.seminar"
+      ],
+      "required": true,
+      "max": 1
+    },
+    "eventRegistrations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::event-registration.event-registration",
+      "mappedBy": "event"
+    },
+    "milestones": {
+      "type": "component",
+      "repeatable": true,
+      "component": "event.milestone",
+      "required": true
+    },
+    "contactPerson": {
+      "type": "component",
+      "repeatable": true,
+      "required": true,
+      "component": "event.contact-person"
+    }
+  }
+}

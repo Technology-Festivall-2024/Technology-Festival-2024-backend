@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_eventable_seminars",
+  "info": {
+    "displayName": "Seminar",
+    "icon": "chartBubble",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "casts": {
+      "type": "component",
+      "repeatable": true,
+      "component": "seminar.seminar-cast",
+      "required": true
+    }
+  }
+}
